@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "modulePath": {
+      "type": "string",
+      "description": "The path to the module, relative to the root of the repository",
+      "default": ""
+    },
+    "moduleName": {
+      "type": "string",
+      "description": "The name of the module, the same as the folder name",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "The name of the module, as displayed in the back office"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the module, as displayed in the back office"
+    },
+    "author": {
+      "type": "string",
+      "description": "The name of the author of the module"
+    },
+    "authorUri": {
+      "type": "string",
+      "description": "The URI of the author of the module"
+    },
+    "version": {
+      "type": "string",
+      "description": "The version of the module",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "moduleDependencies": {
+      "type": "array",
+      "description": "The dependencies of the module",
+      "items": {
+        "type": "object",
+        "properties": {
+          "moduleName": {
+            "type": "string",
+            "description": "The name of the module, the same as the folder name",
+            "pattern": "^[a-zA-Z0-9_-]+$"
+          },
+          "minVersion": {
+            "type": "string",
+            "description": "The version of the module",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "maxVersion": {
+            "type": "string",
+            "description": "The version of the module",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          }
+        },
+        "required": ["moduleName"]
+      }
+    },
+    "prestashopVersions": {
+      "type": "object",
+      "description": "The PrestaShop versions supported by the module",
+      "properties": {
+        "min": {
+          "type": "string",
+          "description": "The minimum PrestaShop version supported by the module",
+          "pattern": "^[0-9]+(\\.[0-9]+){2,3}$"
+        },
+        "max": {
+          "type": "string",
+          "description": "The maximum PrestaShop version supported by the module",
+          "pattern": "^[0-9]+(\\.[0-9]+){2,3}$"
+        }
+      },
+      "required": ["min"]
+    },
+    "phpVersions": {
+      "type": "object",
+      "description": "The PHP versions supported by the module",
+      "properties": {
+        "min": {
+          "type": "string",
+          "description": "The minimum PHP version supported by the module",
+          "pattern": "^[0-9]+(\\.[0-9]+){2}$"
+        },
+        "max": {
+          "type": "string",
+          "description": "The maximum PHP version supported by the module",
+          "pattern": "^[0-9]+(\\.[0-9]+){2}$"
+        }
+      },
+      "required": ["min"]
+    }
+  },
+  "required": ["moduleName", "version"]
+}
