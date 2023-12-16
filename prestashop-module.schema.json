@@ -47,6 +47,21 @@
       "type": "string",
       "description": "The URI of the author of the module"
     },
+    "categoryName": {
+      "type": "string",
+      "description": "The name of the category of the module"
+    },
+    "tab": {
+      "type": "string",
+      "description": "The tab of the module"
+    },
+    "screenshots": {
+      "type": "array",
+      "description": "Screenshots of the module",
+      "items": {
+        "type": "string"
+      }
+    },
     "version": {
       "type": "string",
       "description": "The version of the module",
