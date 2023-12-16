@@ -16,9 +16,28 @@
       "type": "string",
       "description": "The name of the module, as displayed in the back office"
     },
+    "displayNameTranslation": {
+      "type": "object",
+      "description": "The name of the module, as displayed in the back office, translated",
+      "patternProperties": {
+        "^[a-z]{2}$": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        }
+      }
+    },
     "description": {
       "type": "string",
       "description": "The description of the module, as displayed in the back office"
+    },
+    "descriptionTranslation": {
+      "type": "object",
+      "description": "The description of the module, as displayed in the back office, translated",
+      "patternProperties": {
+        "^[a-z]{2}$": {
+          "type": "string"
+        }
+      }
     },
     "author": {
       "type": "string",
