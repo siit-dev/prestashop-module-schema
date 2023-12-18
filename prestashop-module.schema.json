@@ -12,6 +12,11 @@
       "description": "The name of the module, the same as the folder name",
       "pattern": "^[a-zA-Z0-9_-]+$"
     },
+    "archiveNameRegex": {
+      "type": "string",
+      "description": "The regex to match the archive name",
+      "default": "^(?P<moduleName>[a-zA-Z0-9_-]+)\\.zip$"
+    },
     "displayName": {
       "type": "string",
       "description": "The name of the module, as displayed in the back office"
