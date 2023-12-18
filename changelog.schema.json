@@ -1,58 +1,60 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "array",
-  "items": {
-    "title": "Version changelog",
-    "type": "object",
-    "properties": {
-      "version": {
-        "type": "string"
-      },
-      "date": {
-        "type": "string"
-      },
-      "changes": {
-        "title": "What's new in this version?",
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "changesTranslation": {
-        "title": "What's new in this version? (translation)",
+  "properties": {
+    "changelog": {
+      "type": "array",
+      "items": {
+        "title": "Version changelog",
         "type": "object",
-        "patternProperties": {
-          "^[a-z]{2}$": {
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "changes": {
+            "title": "What's new in this version?",
             "type": "array",
             "items": {
               "type": "string"
             }
-          }
-        }
-      },
-      "breakingChanges": {
-        "title": "Breaking changes",
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "breakingChangesTranslation": {
-        "title": "Breaking changes (translation)",
-        "type": "object",
-        "patternProperties": {
-          "^[a-z]{2}$": {
+          },
+          "changesTranslation": {
+            "title": "What's new in this version? (translation)",
+            "type": "object",
+            "patternProperties": {
+              "^[a-z]{2}$": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "breakingChanges": {
+            "title": "Breaking changes",
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "breakingChangesTranslation": {
+            "title": "Breaking changes (translation)",
+            "type": "object",
+            "patternProperties": {
+              "^[a-z]{2}$": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
-        }
+        },
+        "required": ["version", "changes"]
       }
-    },
-    "required": [
-      "version",
-      "changes"
-    ]
-  }
+    }
+  },
+  "required": ["changelog"]
 }
