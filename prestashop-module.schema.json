@@ -127,5 +127,10 @@
       "required": ["min"]
     }
   },
+  "downgradeableMinVersion": {
+    "type": "string",
+    "description": "The minimum version of the module to which it can be downgraded",
+    "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+  },
   "required": ["moduleName", "version"]
 }
