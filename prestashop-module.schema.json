@@ -137,5 +137,10 @@
     "description": "The minimum version of the module to which it can be downgraded",
     "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
   },
+  "upgradeableFromVersion": {
+    "type": "string",
+    "description": "The minimum version of the module from which it can be upgraded while remaining backward compatible. If not set, the module will be considered backwards-compatible with minor versions.",
+    "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+  },
   "required": ["moduleName", "version"]
 }
