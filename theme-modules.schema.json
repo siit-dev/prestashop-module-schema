@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "modules": {
+    "title": "Theme-requested modules",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the module"
+        },
+        "version": {
+          "type": "string",
+          "description": "The version of the module",
+          "pattern": "^(\\*|latest|([^~]|>|>=|<|<=)?[0-9]+(\\.[0-9]+(\\.[0-9]+)?)?)$"
+        }
+      },
+      "required": ["name", "version"]
+    }
+  }
+}

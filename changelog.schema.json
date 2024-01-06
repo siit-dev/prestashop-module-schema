@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "array",
+  "type": "object",
   "items": {
     "title": "Version changelog",
     "type": "object",
@@ -50,9 +50,6 @@
         }
       }
     },
-    "required": [
-      "version",
-      "changes"
-    ]
+    "required": ["version", "changes"]
   }
 }
